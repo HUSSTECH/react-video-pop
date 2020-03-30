@@ -144,7 +144,7 @@ var VideoPop = function (_Component) {
                 ratio = _props.ratio,
                 style = _props.style,
                 className = _props.className,
-                popPos = _props.popPos;
+                zIndex = _props.zIndex;
             var _state = this.state,
                 Vid = _state.Vid,
                 show = _state.show,
@@ -176,7 +176,7 @@ var VideoPop = function (_Component) {
                     mute: mute,
                     play: play,
                     ratio: ratio,
-                    popPos: popPos
+                    zIndex: zIndex
                 })
             );
         }
@@ -204,5 +204,5 @@ VideoPop.propTypes = {
     ratio: _propTypes2.default.object,
     style: _propTypes2.default.object,
     className: _propTypes2.default.string,
-    popPos: _propTypes2.default.string
+    zIndex: _propTypes2.default.string
 };

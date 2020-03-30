@@ -50,6 +50,7 @@ var Pop = function (_Component) {
             active: false,
             show: _this.props.Show,
             mouseOver: false,
+            zIndex: _this.props.zIndex || '10',
             mute: _this.props.mute,
             play: _this.props.play,
             pos: {
@@ -60,7 +61,7 @@ var Pop = function (_Component) {
             //tr - topRight
             //bl - bottomleft
             //tl - topLeft
-            popCoordinate: _this.props.popPos || 'br',
+            popCoordinate: 'br',
             popTranslate: {
                 top: '0px',
                 left: '0px'
@@ -542,7 +543,7 @@ var Pop = function (_Component) {
                 position: 'fixed',
                 width: this.state.dimensions.w + 'px',
                 height: this.state.dimensions.h + 'px',
-                zIndex: '10',
+                zIndex: '' + this.state.zIndex,
                 borderRadius: '4px',
                 top: this.state.pos.y + 'px',
                 left: this.state.pos.x + 'px',

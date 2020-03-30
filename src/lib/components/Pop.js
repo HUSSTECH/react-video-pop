@@ -9,6 +9,7 @@ export default class Pop extends Component {
         active: false,
         show: this.props.Show,
         mouseOver: false,
+        zIndex: this.props.zIndex || '10',
         mute: this.props.mute,
         play: this.props.play,
         pos: {
@@ -19,7 +20,7 @@ export default class Pop extends Component {
         //tr - topRight
         //bl - bottomleft
         //tl - topLeft
-        popCoordinate: this.props.popPos || 'br',
+        popCoordinate: 'br',
         popTranslate:{
             top:'0px',
             left:'0px'
@@ -532,7 +533,7 @@ export default class Pop extends Component {
             position: 'fixed',
             width: `${this.state.dimensions.w}px`,
             height: `${this.state.dimensions.h}px`,
-            zIndex: '10',
+            zIndex: `${this.state.zIndex}`,
             borderRadius: '4px',
             top:`${this.state.pos.y}px`,
             left: `${this.state.pos.x}px`,

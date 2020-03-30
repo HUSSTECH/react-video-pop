@@ -135,7 +135,7 @@ closeVids = time => {
 };
 
 render() {
-    const { Src, root, Poster, ratio, style, className, popPos } = this.props;
+    const { Src, root, Poster, ratio, style, className, zIndex } = this.props;
     const { Vid, show, currTime, mute, play } = this.state;
     return (
         <React.Fragment>
@@ -160,7 +160,7 @@ render() {
                 mute={mute}
                 play={play}
                 ratio={ratio}
-                popPos={popPos}
+                zIndex={zIndex}
             />
         </React.Fragment>
     );
@@ -178,5 +178,5 @@ VideoPop.propTypes = {
     ratio:PropTypes.object,
     style:PropTypes.object,
     className:PropTypes.string,
-    popPos:PropTypes.string,
+    zIndex:PropTypes.string,
 };
