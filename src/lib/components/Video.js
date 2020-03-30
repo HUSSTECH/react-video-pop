@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Pop from './Pop';
-import Overlay from './Overlay';
 class VideoPop extends Component {
 state = {
     show: false,
@@ -61,7 +60,6 @@ handleScroll = () => {
                     mute: node.muted
                 },
                 () => {
-                    // console.log(node.currentTime);
                     node.pause();
                 }
             );
@@ -137,12 +135,7 @@ closeVids = time => {
 };
 
 render() {
-    let style  = {
-        'position':'absolute',
-        'width': '100%',
-        'height':'100%'
-    };
-    const { Src, root, Poster, ratio } = this.props;
+    const { Src, root, Poster, ratio, style, className, popPos } = this.props;
     const { Vid, show, currTime, mute, play } = this.state;
     return (
         <React.Fragment>
@@ -150,12 +143,11 @@ render() {
                 ref={Vid}
                 style={style}
                 id="video-pop"
-                className="choose"
+                className={className}
                 controls
                 src={Src}
                 poster={Poster}
             />
-            {show ? <Overlay /> : null}
             <Pop
                 src={Src}
                 root={root}
@@ -168,6 +160,7 @@ render() {
                 mute={mute}
                 play={play}
                 ratio={ratio}
+                popPos={popPos}
             />
         </React.Fragment>
     );
@@ -182,5 +175,8 @@ VideoPop.propTypes = {
     Poster: PropTypes.string,
     mute: PropTypes.bool,
     autoplay:PropTypes.bool,
-    ratio:PropTypes.object
+    ratio:PropTypes.object,
+    style:PropTypes.object,
+    className:PropTypes.string,
+    popPos:PropTypes.string,
 };

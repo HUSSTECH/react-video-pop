@@ -18,10 +18,6 @@ var _Pop = require('./Pop');
 
 var _Pop2 = _interopRequireDefault(_Pop);
 
-var _Overlay = require('./Overlay');
-
-var _Overlay2 = _interopRequireDefault(_Overlay);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -68,7 +64,6 @@ var VideoPop = function (_Component) {
                         play: document.querySelector('video').playing,
                         mute: node.muted
                     }, function () {
-                        // console.log(node.currentTime);
                         node.pause();
                     });
                 }
@@ -142,16 +137,14 @@ var VideoPop = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var style = {
-                'position': 'absolute',
-                'width': '100%',
-                'height': '100%'
-            };
             var _props = this.props,
                 Src = _props.Src,
                 root = _props.root,
                 Poster = _props.Poster,
-                ratio = _props.ratio;
+                ratio = _props.ratio,
+                style = _props.style,
+                className = _props.className,
+                popPos = _props.popPos;
             var _state = this.state,
                 Vid = _state.Vid,
                 show = _state.show,
@@ -166,12 +159,11 @@ var VideoPop = function (_Component) {
                     ref: Vid,
                     style: style,
                     id: 'video-pop',
-                    className: 'choose',
+                    className: className,
                     controls: true,
                     src: Src,
                     poster: Poster
                 }),
-                show ? _react2.default.createElement(_Overlay2.default, null) : null,
                 _react2.default.createElement(_Pop2.default, {
                     src: Src,
                     root: root,
@@ -183,7 +175,8 @@ var VideoPop = function (_Component) {
                     playVid: this.playVids,
                     mute: mute,
                     play: play,
-                    ratio: ratio
+                    ratio: ratio,
+                    popPos: popPos
                 })
             );
         }
@@ -208,5 +201,8 @@ VideoPop.propTypes = {
     Poster: _propTypes2.default.string,
     mute: _propTypes2.default.bool,
     autoplay: _propTypes2.default.bool,
-    ratio: _propTypes2.default.object
+    ratio: _propTypes2.default.object,
+    style: _propTypes2.default.object,
+    className: _propTypes2.default.string,
+    popPos: _propTypes2.default.string
 };

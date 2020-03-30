@@ -19,7 +19,7 @@ export default class Pop extends Component {
         //tr - topRight
         //bl - bottomleft
         //tl - topLeft
-        popCoordinate:'br',
+        popCoordinate: this.props.popPos || 'br',
         popTranslate:{
             top:'0px',
             left:'0px'

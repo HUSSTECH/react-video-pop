@@ -60,7 +60,7 @@ var Pop = function (_Component) {
             //tr - topRight
             //bl - bottomleft
             //tl - topLeft
-            popCoordinate: 'br',
+            popCoordinate: _this.props.popPos || 'br',
             popTranslate: {
                 top: '0px',
                 left: '0px'
@@ -506,7 +506,6 @@ var Pop = function (_Component) {
                     });
                 }
             }
-            // return null;
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -527,49 +526,6 @@ var Pop = function (_Component) {
                 active: true
             });
         }
-
-        // static getDerivedStateFromProps(props, state) {
-        //     let node = state.Pop.current;
-        //     if (props.currtime !== state.currtime) {
-        //         node.currentTime = props.currtime;
-        //         // console.log(node.currentTime);
-        //         node.play();
-        //         return {
-        //             currtime: props.currtime,
-        //             show: props.Show
-        //         };
-        //     } else if (props.Show !== state.show) {
-        //         node.pause();
-        //         return {
-        //             show: props.Show
-        //         };
-        //     } else if (props.mute !== state.mute) {
-        //         if (props.mute) {
-        //             node.muted = true;
-        //             return {
-        //                 mute: props.mute
-        //             };
-        //         } else {
-        //             node.muted = false;
-        //             return {
-        //                 mute: props.mute
-        //             };
-        //         }
-        //     } else if (props.play !== state.play) {
-        //         if (props.play) {
-        //             node.play();
-        //             return {
-        //                 play: props.play
-        //             };
-        //         } else {
-        //             node.pause();
-        //             return {
-        //                 play: props.play
-        //             };
-        //         }
-        //     }
-        //     return null;
-        // }
 
         // position of the resize div
 
