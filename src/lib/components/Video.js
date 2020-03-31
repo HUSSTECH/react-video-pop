@@ -145,6 +145,7 @@ render() {
                 id="video-pop"
                 className={className}
                 controls
+                controlsList="nodownload noremoteplayback"
                 src={Src}
                 poster={Poster}
             />
